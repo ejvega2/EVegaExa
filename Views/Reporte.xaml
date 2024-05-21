@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EVegaExa.Views.Reporte"
+             BackgroundColor="#f5f5f5">
+    <AbsoluteLayout>
+
+        <!-- Imagen de fondo -->
+        <Image Source="background_image.png" 
+               Aspect="AspectFill" 
+               AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+               AbsoluteLayout.LayoutFlags="All"/>
+
+        <ScrollView AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                    AbsoluteLayout.LayoutFlags="All"
+                    VerticalScrollBarVisibility="Always">
+            <Frame BackgroundColor="#ffffff"
+                   CornerRadius="10"
+                   HasShadow="True"
+                   Padding="30"
+                   Margin="20">
+
+                <StackLayout Spacing="15">
+
+                    <Label Text="Reporte de Estudiante"
+                           TextColor="#333333" 
+                           FontSize="32"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center" />
+
+                    <Grid ColumnSpacing="10" RowSpacing="15">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Nombre: " FontAttributes="Bold"
+                               VerticalOptions="Center" 
+                               Margin="0,5"
+                               Grid.Row="0" Grid.Column="0"/>
+                        <Label Text="{Binding Nombre}" 
+                               VerticalOptions="Center" 
+                               Margin="0,5"
+                               Grid.Row="0" Grid.Column="1"/>
+
+                        <Label Text="Apellido: " FontAttributes="Bold"
+                               VerticalOptions="Center" 
+                               Margin="0,5"
+                               Grid.Row="1" Grid.Column="0"/>
+                        <Label Text="{Binding Apellido}" 
+                               VerticalOptions="Center" 
+                               Margin="0,5"
+                               Grid.Row="1" Grid.Column="1"/>
+
+                        <Label Text="Cedula: " FontAttributes="Bold"
+                               VerticalOptions="Center" 
+                               Margin="0,5"
+                               Grid.Row="2" Grid.Column="0"/>
+                        <Label Text="{Binding Cedula}" 
+                               VerticalOptions="Center" 
+                               Margin="0,5"
+                               Grid.Row="2" Grid.Column="1"/>
+
+                        <Label Text="Foto: " FontAttributes="Bold"
+                               VerticalOptions="Center" 
+                               Margin="0,5"
+                               Grid.Row="3" Grid.Column="0"/>
+                        <Image Source="{Binding Foto}" Aspect="AspectFit" 
+                               Grid.Row="3" Grid.Column="1"
+                               HeightRequest="200" />
+
+                        <Label Text="Ruta de Viaje: " FontAttributes="Bold"
+                               VerticalOptions="Center" 
+                               Margin="0,5"
+                               Grid.Row="4" Grid.Column="0"/>
+                        <Label Text="{Binding RutaViaje}" 
+                               VerticalOptions="Center" 
+                               Margin="0,5"
+                               Grid.Row="4" Grid.Column="1"/>
+
+                        <!-- Botones adicionales -->
+                        <Button x:Name="btndesloguear" Text="Desloguearse" Clicked="btndesloguear_Clicked"
+                                BackgroundColor="#007aff" TextColor="White" 
+                                FontSize="18" CornerRadius="20"
+                                Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+                                Margin="0,20,0,0"/>
+
+                        <Button x:Name="btneditar"  Text="Editar Datos" Clicked="btneditar_Clicked"
+                                BackgroundColor="#34c759" TextColor="White" 
+                                FontSize="18" CornerRadius="20"
+                                Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    </Grid>
+
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+    </AbsoluteLayout>
+</ContentPage>
