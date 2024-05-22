@@ -50,33 +50,40 @@
                         <Label Text="Nombre: " FontAttributes="Bold"
                                VerticalOptions="Center" 
                                Margin="0,5"
+                               TextColor="Black"
                                Grid.Row="0" Grid.Column="0"/>
-                        <Entry Text="{Binding Nombre}" 
+                        <Entry x:Name="txtNombres" 
                                VerticalOptions="Center" 
                                Margin="0,5"
+                               TextColor="Black"
                                Grid.Row="0" Grid.Column="1"/>
 
                         <Label Text="Apellido: " FontAttributes="Bold"
                                VerticalOptions="Center" 
                                Margin="0,5"
+                               TextColor="Black"
                                Grid.Row="1" Grid.Column="0"/>
-                        <Entry Text="{Binding Apellido}" 
+                        <Entry x:Name="txtApellidos"  
                                VerticalOptions="Center" 
                                Margin="0,5"
+                               TextColor="Black"
                                Grid.Row="1" Grid.Column="1"/>
 
                         <Label Text="Cedula: " FontAttributes="Bold"
                                VerticalOptions="Center" 
                                Margin="0,5"
+                               TextColor="Black"
                                Grid.Row="2" Grid.Column="0"/>
-                        <Entry Text="{Binding Cedula}" 
+                        <Entry x:Name="txtCedula" 
                                VerticalOptions="Center" 
                                Margin="0,5"
+                               TextColor="Black"
                                Grid.Row="2" Grid.Column="1"/>
 
                         <Label Text="Foto: " FontAttributes="Bold"
                                VerticalOptions="Center" 
                                Margin="0,5"
+                               TextColor="Black"
                                Grid.Row="3" Grid.Column="0"/>
                         <Image Source="{Binding Foto}" Aspect="AspectFit" 
                                Grid.Row="3" Grid.Column="1"
@@ -85,8 +92,10 @@
                         <Label Text="Ruta de Viaje: " FontAttributes="Bold"
                                VerticalOptions="Center" 
                                Margin="0,5"
+                               TextColor="Black"
                                Grid.Row="4" Grid.Column="0"/>
-                        <Entry Text="{Binding RutaViaje}" 
+                        <Entry x:Name="txtRuta"  
+                               TextColor="Black"
                                VerticalOptions="Center" 
                                Margin="0,5"
                                Grid.Row="4" Grid.Column="1"/>

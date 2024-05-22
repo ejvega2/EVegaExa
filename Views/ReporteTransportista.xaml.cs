@@ -1,31 +1,31 @@
+using Newtonsoft.Json;
+using System.Collections.ObjectModel;
+
 namespace EVegaExa.Views;
 
 public partial class ReporteTransportista : ContentPage
 {
-	public ReporteTransportista()
-	{
-		InitializeComponent();
-        // Supongamos que tienes una lista de estudiantes
-        List<Estudiante> estudiantes = ObtenerListaEstudiantes();
-        lstEstudiantes.ItemsSource = estudiantes;
+    private const string baseUrl = "http://localhost:8000/api/";
+    private readonly HttpClient cliente = new HttpClient();
+    private ObservableCollection<Estudiante> est;
+    public ReporteTransportista(int id)
+    {
+        InitializeComponent();
+        ObtenerDatos(id);
     }
     // Método ficticio para obtener una lista de estudiantes
-    private List<Estudiante> ObtenerListaEstudiantes()
+    public async void ObtenerDatos(int id)
     {
-        List<Estudiante> estudiantes = new List<Estudiante>
-            {
-                new Estudiante { Nombre = "Juan", Apellido = "Perez", Cedula = "123456789" },
-                new Estudiante { Nombre = "Maria", Apellido = "Gonzalez", Cedula = "987654321" }
-                // Agrega más estudiantes si es necesario
-            };
-
-        return estudiantes;
+        var content = await cliente.GetStringAsync(baseUrl + "rutas/" + id);
+        List<Estudiante> mostrar = JsonConvert.DeserializeObject<List<Estudiante>>(content);
+        est = new ObservableCollection<Estudiante>(mostrar);
+        lstEstudiantes.ItemsSource = est;
     }
     // Clase de ejemplo para representar un estudiante
     public class Estudiante
     {
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string Cedula { get; set; }
+        public string nombres { get; set; }
+        public string apellidos { get; set; }
+        public string cedula { get; set; }
     }
 }

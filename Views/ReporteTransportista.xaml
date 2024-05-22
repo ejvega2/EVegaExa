@@ -50,9 +50,9 @@
                                 <DataTemplate>
                                     <ViewCell>
                                         <StackLayout Padding="10">
-                                            <Label Text="{Binding Nombre}" FontAttributes="Bold"/>
-                                            <Label Text="{Binding Apellido}" FontAttributes="Bold"/>
-                                            <Label Text="{Binding Cedula}"/>
+                                            <Label Text="{Binding nombres}" FontAttributes="Bold" TextColor="Black"/>
+                                            <Label Text="{Binding apellidos}" FontAttributes="Bold" TextColor="Black"/>
+                                            <Label Text="{Binding cedula}" TextColor="Black"/>
                                             <!-- Agrega más etiquetas para mostrar otros detalles de los estudiantes si es necesario -->
                                         </StackLayout>
                                     </ViewCell>

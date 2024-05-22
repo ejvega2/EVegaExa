@@ -57,6 +57,7 @@
                                Placeholder="Ingrese su cedula"
                                Grid.Row="1"
                                Grid.Column="0"
+                               TextColor="Black"
                                BackgroundColor="#f0f0f0"
                                HeightRequest="40"
                                Margin="0,5" />
@@ -73,6 +74,7 @@
                                Placeholder="Ingrese su nombre"
                                Grid.Row="3"
                                Grid.Column="0"
+                               TextColor="Black"
                                BackgroundColor="#f0f0f0"
                                HeightRequest="40"
                                Margin="0,5" />
@@ -89,6 +91,7 @@
                                Placeholder="Ingrese su apellido"
                                Grid.Row="5"
                                Grid.Column="0"
+                               TextColor="Black"
                                BackgroundColor="#f0f0f0"
                                HeightRequest="40"
                                Margin="0,5" />
@@ -101,13 +104,19 @@
                                VerticalTextAlignment="Center"
                                HorizontalTextAlignment="Start" />
 
-                        <Entry x:Name="txtRutaR"
-                               Placeholder="Ingrese su ruta de viaje"
-                               Grid.Row="7"
-                               Grid.Column="0"
-                               BackgroundColor="#f0f0f0"
-                               HeightRequest="40"
-                               Margin="0,5" />
+                        <Picker x:Name="pkRutaR"
+                                SelectedIndexChanged="pkRutaR_SelectedIndexChanged"
+                                Grid.Row="7"
+                                Grid.Column="0"
+                                BackgroundColor="#f0f0f0"
+                                Margin="0,5">
+                            <Picker.Items>
+                                <x:String>NORTE</x:String>
+                                <x:String>SUR</x:String>
+                                <x:String>ESTE</x:String>
+                                <x:String>OESTE</x:String>
+                            </Picker.Items>
+                        </Picker>
 
                         <Label Text="Contraseña"
                                TextColor="#666666"
@@ -122,6 +131,7 @@
                                IsPassword="True"
                                Grid.Row="9"
                                Grid.Column="0"
+                               TextColor="Black"
                                BackgroundColor="#f0f0f0"
                                HeightRequest="40"
                                Margin="0,5" />
@@ -135,8 +145,10 @@
                                HorizontalTextAlignment="Start" />
 
                         <Entry x:Name="txtConfClaveR"
+                               TextChanged="txtConfClaveR_TextChanged"
                                Placeholder="Ingrese nuevamente su contraseña"
                                IsPassword="True"
+                               TextColor="Black"
                                Grid.Row="11"
                                Grid.Column="0"
                                BackgroundColor="#f0f0f0"

@@ -36,6 +36,6 @@ public partial class Reporte : ContentPage
 
     private void btneditar_Clicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new Resumen());
+        //Navigation.PushAsync(new Resumen());
     }
 }

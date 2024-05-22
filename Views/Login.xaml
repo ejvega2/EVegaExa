@@ -53,6 +53,7 @@
                                 Placeholder="Ingrese su Nombre de Usuario"
                                 Grid.Row="1"
                                 Grid.Column="0"
+                               TextColor="Black"
                                 BackgroundColor="#f0f0f0"
                                 HeightRequest="40"
                                 Margin="0,5"/>
@@ -70,6 +71,7 @@
                                 IsPassword="True"
                                 Grid.Row="3"
                                 Grid.Column="0"
+                               TextColor="Black"
                                 BackgroundColor="#f0f0f0"
                                 HeightRequest="40"
                                 Margin="0,5"/>
